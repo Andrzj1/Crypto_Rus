@@ -52,3 +52,10 @@ th {
 .negative {
     color: red;
 }
+#crypto_btc {
+    width: 25px;
+    height: 25px;  
+    position: relative;
+    top: 5px;
+    right: 9px;
+}

@@ -45,140 +45,75 @@
             <th>Название</th>
             <th>Текущая цена (USD)</th>
             <th>Изменение за 24 часа (%)</th>
+            <th>Купить</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>BTC</td>
+            <td><img id="crypto_btc" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/800px-Bitcoin.svg.png" alt="BTC">BTC</td>
             <td>Bitcoin</td>
             <td>$56,000</td>
             <td class="positive">+2.5%</td>
         </tr>
         <tr>
-            <td>ETH</td>
+            <td><img id="crypto_btc" src="https://s2.coinmarketcap.com/static/img/coins/200x200/1027.png">ETH</td>
             <td>Ethereum</td>
-            <td>$3,500</td>
-            <td class="negative">-2.95%</td>
+            <td>$2,431.76</td>
+            <td class="positive">+3.67%</td>
         </tr>
         <tr>
-            <td>TON</td>
+            <td><img id="crypto_btc" src="data:image/png;base64,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">TON</td>
             <td>Toncoin</td>
-            <td>$4.67</td>
-            <td class="negative">-1.5%</td>
+            <td>$6.28</td>
+            <td class="positive">+15.33%</td>
         </tr>
         <tr>
-            <td>XRP</td>
+            <td><img id="crypto_btc" src="https://s2.coinmarketcap.com/static/img/coins/200x200/52.png">XRP</td>
             <td>Ripple</td>
             <td>$1.20</td>
-            <td class="positive">+3.2%</td>
+            <td class="positive">+3.00%</td>
         </tr>
         <tr>
-            <td>LTC</td>
+            <td><img id="crypto_btc" src="https://s3.coinmarketcap.com/static/img/portraits/630c5fcaf8184351dc5c6ee5.png">LTC</td>
             <td>Litecoin</td>
             <td>$200</td>
             <td class="negative">-1.0%</td>
         </tr>
         <tr>
-            <td>ETH</td>
-            <td>Ethereum</td>
-            <td>$3,500</td>
-            <td class="negative">-2.95%</td>
+            <td><img id="crypto_btc" src="https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png">SOL</td>
+            <td>Solana</td>
+            <td>$154.79</td>
+            <td class="positive">+6.95%</td>
         </tr>
         <tr>
-            <td>ETH</td>
-            <td>Ethereum</td>
-            <td>$3,500</td>
-            <td class="negative">-2.95%</td>
+            <td><img id="crypto_btc" src="https://upload.wikimedia.org/wikipedia/en/d/d0/Dogecoin_Logo.png">DOGE</td>
+            <td>Dogecoin</td>
+            <td>$0.09</td>
+            <td class="positive">+4.95%</td>
         </tr>
         <tr>
-            <td>ETH</td>
-            <td>Ethereum</td>
-            <td>$3,500</td>
-            <td class="negative">-2.95%</td>
+            <td><img id="crypto_btc" src="https://cryptologos.cc/logos/bnb-bnb-logo.png">BNB</td>
+            <td>Binance Coin</td>
+            <td>$488.70</td>
+            <td class="positive">+2.99%</td>
         </tr>
         <tr>
-            <td>ETH</td>
-            <td>Ethereum</td>
-            <td>$3,500</td>
-            <td class="negative">-2.95%</td>
+            <td><img id="crypto_btc" src="https://img.cryptorank.io/coins/okb1642497114506.png">OKB</td>
+            <td>OKB</td>
+            <td>$34.1</td>
+            <td class="positive">+1.61%</td>
         </tr>
         <tr>
-            <td>ETH</td>
-            <td>Ethereum</td>
+            <td><img id="crypto_btc" src="https://s2.coinmarketcap.com/static/img/coins/200x200/1831.png">BCH</td>
+            <td>Bitcoin Cash</td>
             <td>$3,500</td>
-            <td class="negative">-2.95%</td>
+            <td class="positive">+3.52%</td>
         </tr>
         <tr>
-            <td>ETH</td>
-            <td>Ethereum</td>
+            <td><img id="crypto_btc" src="https://s2.coinmarketcap.com/static/img/coins/200x200/3890.png">MATIC</td>
+            <td>Polygon</td>
             <td>$3,500</td>
-            <td class="negative">-2.95%</td>
-        </tr>
-        <tr>
-            <td>ETH</td>
-            <td>Ethereum</td>
-            <td>$3,500</td>
-            <td class="negative">-2.95%</td>
-        </tr>
-        <tr>
-            <td>ETH</td>
-            <td>Ethereum</td>
-            <td>$3,500</td>
-            <td class="negative">-2.95%</td>
-        </tr>
-        <tr>
-            <td>ETH</td>
-            <td>Ethereum</td>
-            <td>$3,500</td>
-            <td class="negative">-2.95%</td>
-        </tr>
-        <tr>
-            <td>ETH</td>
-            <td>Ethereum</td>
-            <td>$3,500</td>
-            <td class="negative">-2.95%</td>
-        </tr>
-        <tr>
-            <td>ETH</td>
-            <td>Ethereum</td>
-            <td>$3,500</td>
-            <td class="negative">-2.95%</td>
-        </tr>
-        <tr>
-            <td>ETH</td>
-            <td>Ethereum</td>
-            <td>$3,500</td>
-            <td class="negative">-2.95%</td>
-        </tr>
-        <tr>
-            <td>ETH</td>
-            <td>Ethereum</td>
-            <td>$3,500</td>
-            <td class="negative">-2.95%</td>
-        </tr>
-        <tr>
-            <td>ETH</td>
-            <td>Ethereum</td>
-            <td>$3,500</td>
-            <td class="negative">-2.95%</td>
-        </tr>
-        <tr>
-            <td>ETH</td>
-            <td>Ethereum</td>
-            <td>$3,500</td>
-            <td class="negative">-2.95%</td>
-        </tr>
-        <tr>
-            <td>ETH</td>
-            <td>Ethereum</td>
-            <td>$3,500</td>
-            <td class="negative">-2.95%</td>
-        </tr>
-        <tr>
-            <td>ETH</td>
-            <td>Ethereum</td>
-            <td>$3,500</td>
-            <td class="negative">-2.95%</td>
+            <td class="positive">+2.98%</td>
         </tr>
     </tbody>
 </table>
