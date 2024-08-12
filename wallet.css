@@ -33,3 +33,7 @@ body {
 .menu li a:hover {
     background-color: #111;
 }
+#balance {
+    width: 250px;
+    height: 100px;
+}

@@ -79,7 +79,7 @@ body {
 
 #id-player {
     margin-left: 10px; /* Отступ для текста справа */
-    color: rgb(17, 219, 17);
+    color: rgb(255, 0, 0);
     font-family: Arial;
 }
 
@@ -90,8 +90,8 @@ body {
     justify-content: center;
 }
 #ofical {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     position: relative;
     bottom: -3px;
 }
