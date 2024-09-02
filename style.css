@@ -79,3 +79,13 @@ body {
     top: 288px;
     right: 350px;
 }
+#jxj-txt {
+    position: relative;
+    top: 299px;
+}
+#lol {
+    height: 25px;
+    width: 25px;
+    position: relative;
+    top: 10px;
+}
