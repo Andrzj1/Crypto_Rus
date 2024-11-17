@@ -3,19 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Rus</title>
-    <link rel="stylesheet" href="wallet.css">
+    <title>Мой Кошелек Keplr</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        #lol {
+    height: 25px;
+    width: 25px;
+    position: relative;
+    top: 8px;
+}
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        .header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .wallet-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+        .wallet-container h1 {
+            margin-bottom: 20px;
+        }
+        .wallet-container p {
+            margin: 10px 0;
+        }
+        .wallet-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        .wallet-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <nav class="menu">
-        <ul>
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="lider.html">Лидеры маркетинга</a></li>
-            <li><a href="wallet.html">Кошелек</a></li>
-            <li><a href="portfilio.html">Профиль</a></li>
-            <li><a href="contact.html">Как получить— <img id="lol" src="https://s3.wasabisys.com/pmg-media/custom_emojis/images/000/087/663/original/0de744c72224e540.png"></a></li>
-        </ul>
-    </nav>
-    <h1 id="balance">$0.00<button id="">+</button></h1>
+    <div class="header">
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="lider.html">Лидеры маркетинга</a></li>
+                <li><a href="wallet.html">Кошелек</a></li>
+                <li><a href="portfilio.html">Профиль</a></li>
+                <li><a href="contact.html">Как получить— <img id="lol" src="https://s3.wasabisys.com/pmg-media/custom_emojis/images/000/087/663/original/0de744c72224e540.png"></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="wallet-container">
+        <h1>Мой Кошелек Keplr</h1>
+        <p id="wallet-address">Адрес кошелька: Не подключено</p>
+        <p id="wallet-balance">Баланс: Не подключено</p>
+        <button id="connect-wallet">Подключить кошелек</button>
+    </div>
+
+    <script>
+        const connectWalletButton = document.getElementById('connect-wallet');
+        const walletAddress = document.getElementById('wallet-address');
+        const walletBalance = document.getElementById('wallet-balance');
+
+        connectWalletButton.addEventListener('click', async () => {
+            if (typeof window.keplr !== 'undefined') {
+                try {
+                    // Запрос доступа к кошельку
+                    await window.keplr.enable("cosmoshub-4");
+                    const offlineSigner = window.getOfflineSigner("cosmoshub-4");
+                    const accounts = await offlineSigner.getAccounts();
+                    const account = accounts[0];
+                    walletAddress.textContent = `Адрес кошелька: ${account.address}`;
+
+                    // Получение баланса
+                    const rpcEndpoint = "https://rpc.cosmos.network";
+                    const client = await window.Cosmos.Client.connect(rpcEndpoint);
+                    const balance = await client.getBalance(account.address, "uatom");
+                    const balanceInAtom = (parseInt(balance.amount) / 1e6).toFixed(4);
+                    walletBalance.textContent = `Баланс: ${balanceInAtom} ATOM`;
+                } catch (error) {
+                    console.error('Ошибка подключения к кошельку:', error);
+                }
+            } else {
+                alert('Keplr не установлен!');
+            }
+        });
+    </script>
 </body>
 </html>

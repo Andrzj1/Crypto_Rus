@@ -3,25 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Rus</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Главная - Мой Крипто-Сайт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        .header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .hero {
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+            color: black;
+        }
+        .hero p {
+            font-size: 24px;
+            color: black;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 20px;
+        }
+        .feature {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 300px;
+        }
+        .feature h2 {
+            margin-bottom: 20px;
+        }
+        .contact {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .contact h2 {
+            margin-bottom: 20px;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact input, .contact textarea {
+            margin: 10px 0;
+            padding: 10px;
+            width: 300px;
+            border-radius: 5px;
+            border: none;
+        }
+        .contact button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        .contact button:hover {
+            background-color: #0056b3;
+        }
+
+        #lol {
+    height: 25px;
+    width: 25px;
+    position: relative;
+    top: 8px;
+}
+    </style>
 </head>
 <body>
-    <nav class="menu">
-        <ul>
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="lider.html">Лидеры маркетинга</a></li>
-            <li><a href="wallet.html">Кошелек</a></li>
-            <li><a href="portfilio.html">Профиль</a></li>
-            <li><a href="contact.html">Как получить— <img id="lol" src="https://s3.wasabisys.com/pmg-media/custom_emojis/images/000/087/663/original/0de744c72224e540.png"></a></li>
-        </ul>
-    </nav>
-    <div class="block">
-        <h1 id="bro-txt">Покупайте крипто быстро и безопасно<img id="ofical" src="https://flomaster.top/uploads/posts/2023-01/1674063143_flomaster-club-p-risunok-galochka-vkontakte-23.png"></h1>
-        <img id="img-ton" src="https://www.estatehere.com/upload_images/1665495419_bitcoin.png">
-        <p id="jxj-txt">C улучшиной технологией безопасности покупать монеты стало ещё надёжнее!</p>
-      </div>
-            
-      
+    <div class="header">
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="lider.html">Лидеры маркетинга</a></li>
+                <li><a href="wallet.html">Кошелек</a></li>
+                <li><a href="portfilio.html">Профиль</a></li>
+                <li><a href="contact.html">Как получить— <img id="lol" src="https://s3.wasabisys.com/pmg-media/custom_emojis/images/000/087/663/original/0de744c72224e540.png"></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="hero">
+        <h1>Добро пожаловать на Мой Крипто-Сайт</h1>
+        <p>Ваш надежный партнер в мире криптовалют</p>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <h2>Безопасность</h2>
+            <p>Мы гарантируем безопасность ваших средств с использованием передовых технологий.</p>
+        </div>
+        <div class="feature">
+            <h2>Простота</h2>
+            <p>Наш интерфейс интуитивно понятен и прост в использовании.</p>
+        </div>
+        <div class="feature">
+            <h2>Поддержка</h2>
+            <p>Круглосуточная поддержка для решения любых вопросов.</p>
+        </div>
+    </div>
+
+    <div class="contact">
+        <h2>Свяжитесь с нами</h2>
+        <form>
+            <input type="text" placeholder="Ваше имя" required>
+            <input type="email" placeholder="Ваш email" required>
+            <textarea placeholder="Ваше сообщение" rows="5" required></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
 </body>
 </html>
